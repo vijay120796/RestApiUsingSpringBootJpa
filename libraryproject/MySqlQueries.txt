@@ -1,0 +1,43 @@
+Alter user 'root'@'localhost' identified by 'root';
+
+show databases;
+Create database library;
+Use library;
+
+show tables;
+
+create table user(
+userid int not null primary key,
+username varchar(100) not null,
+password  varchar(100) not null,
+email varchar(100) not null,
+phone bigint not null,
+isadmin varchar(50) not null);
+
+show tables;
+
+describe user;
+
+select * from user;
+
+create table books(
+bookid int not null primary key,
+bookname varchar(200) not null ,
+price int not null,
+genre varchar(200) not null);
+
+select * from books;
+
+create table history(
+historyid int not null primary key,
+userid int not null,
+bookid int not null,
+issuedate varchar(50) not null,
+returndate varchar(50) not null,
+isreturned varchar(50) not null,
+fine int,
+foreign key (userid) references user(userid),
+foreign key (bookid) references books(bookid));
+
+
+

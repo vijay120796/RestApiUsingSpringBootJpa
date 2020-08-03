@@ -1,0 +1,21 @@
+//Register User:
+@PostMapping("registeruser") 
+
+//User Menu:
+@GetMapping("user/bookspurchased/{userid}") //Books purchased by user:
+@PostMapping("user/purchasebook")  //Purchase a book:
+@DeleteMapping("user/returnbook/{hid}") //Return a book:
+
+//ADMIN MENU:
+@GetMapping(value="admin/nonreturnedbooks") //non returned books:
+@PostMapping("admin/adduser") //Add user - post:
+@PutMapping("admin/edituser") //Edit user - put:
+@DeleteMapping("deleteuser/{uid}") //Delete User:
+
+
+//Other task of Admin: 
+@GetMapping("admin/booklist") //Get the list of books 
+@GetMapping("admin/userlist") //Get the list of users:
+@PostMapping("admin/addbook") //Add book:
+@PutMapping("admin/editbook") //Edit a book:
+@DeleteMapping("deletebook/{bid}")  //Delete a book
